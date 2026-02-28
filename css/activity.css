@@ -1,0 +1,468 @@
+
+
+/* ===== リセット＆基本設定 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #222;
+  line-height: 1.8;
+  background: #fff;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+}
+.site-header__logo {
+  height: 40px;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s;
+}
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== 制作 ===== */
+.creation-section {
+  padding: 100px 0;
+  text-align: center;
+  background: #f6f6f6;
+
+}
+.creation-title {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+.creation-text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.9;
+}
+
+/* コンテナ全体（このページ用） */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+/* 上段・下段をまとめる行 */
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+
+/* 各要素のスタイル */
+.item {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 上の3つの要素の幅 */
+.top-row .item {
+  flex-basis: 30%;
+}
+
+/* 下の2つの要素の幅 */
+.bottom-row {
+  justify-content: center;
+}
+.bottom-row .item {
+  flex-basis: 40%;
+  margin: 0 20px;
+}
+
+/* タイトルのスタイル */
+.item-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+/* 画像 */
+.item-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 4px;      
+  /* 必要ならイベントと揃えて */
+  /* object-fit: cover; */
+}
+
+
+/* 説明文のスタイル */
+.item-description {
+  line-height: 1.6;
+}
+
+/* ===== 参加大会（カード） ===== */
+.two-competition {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 60px auto;
+  flex-wrap: wrap;
+}
+
+.competition {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px 24px 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 460px;
+  text-align: left;
+  transition: transform .25s, box-shadow .25s;
+}
+
+/* PCホバーでちょっと浮く */
+@media (min-width: 769px) {
+  .competition:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+}
+
+.competition-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;   /* ロゴが切れないように */
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+/* テキスト */
+.competition-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #333;
+}
+
+
+
+/* strong 自体も少し強調（ラベル以外も想定して） */
+.competition-text strong,
+.competition-text b {
+  font-weight: 700;
+}
+
+/* aタグの色 */
+.competition-text a {
+  color: #0072c6;
+  text-decoration: underline;
+}
+.competition-text a:hover {
+  opacity: .7;
+}
+
+/* ===== イベント ===== */
+.event-section {
+  padding: 100px 0;
+  background: #f6f6f6;
+}
+.event-title {
+  text-align: center;
+  font-size: 26px;
+}
+
+/* タイムライン全体 */
+.timeline {
+  max-width: 960px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 0 30px;
+  font-family: "Noto Sans JP", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.8;
+}
+.timeline li {
+  position: relative;
+  list-style: none;
+  padding: 0 0 28px 0;
+}
+.timeline dl {
+  margin: 0 0 20px 3em;
+}
+.timeline dt {
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+/* ddの中を「画像・本文」の2カラムに */
+.timeline dd {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px 28px;
+  align-items: start;
+}
+.timeline dd strong {
+  display: block;
+  font-weight: 700;
+  margin: 4px 0 10px;
+}
+
+/* 画像 */
+.thumb {
+  margin: 0;
+}
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* テキスト */
+.body {
+  font-size: 15px;
+}
+
+/* 縦線 */
+.border-line {
+  position: absolute;
+  left: 0.2em;
+  top: 0;
+  width: 2px;
+  height: 0;              /* ← 最初は 0 にする！ */
+  background: #ccc;
+  transition: height 0.4s ease-out; /* ← 伸び方をなめらかに */
+}
+
+
+/* 見出し横の丸 */
+.timeline li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #666;
+  border-radius: 50%;
+  
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  background: #e7e7e7;
+  padding: 48px 0 24px;
+  color: #222;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 0 20px;
+}
+.footer-links__col {
+  text-align: center;
+}
+.footer-links__head {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: .8;
+}
+.footer-links__dots {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+}
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  opacity: .7;
+}
+.footer-credit{ 
+  text-align:center; 
+  font-size:12px; 
+  opacity:.7; 
+}
+
+/* ===== トップへ戻るボタン ===== */
+.pagetop {
+  position: fixed;
+  right: 24px;
+  bottom: 40px;   /* ← ここを上げて見やすい位置に */
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  cursor: pointer;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s, transform .2s;
+}
+
+.pagetop::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: translate(-50%, -30%) rotate(-45deg);
+}
+
+.pagetop.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagetop:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .pagetop {
+    right: 16px;
+    bottom: 30px;   /* ← スマホも少し上げる */
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ===================================== */
+/* ===== レスポンシブ（～768px） ===== */
+/* ===================================== */
+@media (max-width: 768px) {
+
+  /* ヘッダー */
+  .site-header__inner {
+    padding: 12px 20px;
+  }
+  .site-header__logo {
+    height: 40px;
+  }
+  .nav__link {
+    font-size: 10px;
+  }
+
+  /* 制作 */
+  .creation-section {
+    padding: 60px 0;
+  }
+  .creation-title {
+    font-size: 22px;
+  }
+  .creation-text {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+  .row {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .top-row .item,
+  .bottom-row .item {
+    flex-basis: 100%;
+    max-width: 400px;
+    margin: 0 0 24px;
+  }
+  .item-image {
+    max-width: 100%;
+  }
+  .item-description {
+    font-size: 14px;
+  }
+
+  /* 参加大会 */
+  .two-competition {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 40px auto;
+  }
+  .competition {
+    max-width: 90%;
+    padding: 20px 18px 24px;
+  }
+  .competition-img {
+    height: 180px;
+  }
+  .competition-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* イベント（タイムライン） */
+  .event-title {
+    font-size: 22px;
+  }
+  .timeline {
+    padding: 0 20px;
+  }
+  .timeline dl {
+    margin: 0 0 16px 2.4em;
+  }
+  .timeline dd {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .thumb img {
+    aspect-ratio: 16/11;
+  }
+
+  /* フッター：そのままでもOKだが、狭い時は縦積みにしたい場合はここに追記 */
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

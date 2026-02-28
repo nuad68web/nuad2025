@@ -1,0 +1,448 @@
+/* ===== リセット＆基本設定 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #222;
+  line-height: 1.8;
+  background: #fff;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+}
+.site-header__logo {
+  height: 40px;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s;
+}
+
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+  .nav__link {
+    font-size: 10px;
+  }
+}
+
+
+/*========= スクロールダウンのためのCSS ===============*/
+
+
+/* ===== Scroll Down（ヒーロー下中央） ===== */
+.scrolldown {
+  position: absolute;
+  bottom: 40px;            /* 画面下からの距離を調整 */
+  left: 50%;               /* 中央寄せ基準 */
+  transform: translateX(-50%); /* 真ん中に配置 */
+  animation: arrowmove 1.6s ease-in-out infinite;
+  z-index: 10;             /* hero__overlayより上に出す */
+}
+
+.scrolldown span {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 矢印上下のアニメーション */
+@keyframes arrowmove {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* Scroll テキスト */
+.scrolldown span {
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  color: #fff;              /* hero背景に合わせて白 */
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 矢印（上部短い斜め線） */
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  width: 1px;
+  height: 20px;
+  background: #fff;
+  transform: skewX(-31deg);
+}
+
+/* 矢印（下部長い縦線） */
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 50px;
+  background: #fff;
+}
+
+
+/* ===== 当会について ===== */
+.about-section {
+  padding: 100px 0;
+  text-align: center;
+}
+.about-title {
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+.about-text {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+  .about-text  {
+    font-size: 13px;
+  }
+  .about-title{
+    font-size: 20px;
+  }
+}
+
+/* ===== 活動紹介 ===== */
+
+
+.activities-section {
+  background: #f6f6f6;
+  padding: 100px 0;
+  
+  text-align: center;
+}
+.activities-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+.activities-text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.9;
+}
+.activities-box {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+.activities-text {
+    font-size: 13px;
+  }
+ .activities-title{
+    font-size: 20px;
+  }
+}
+/* カードをリンク化しても見た目を維持 */
+.activities-content {
+  display: block;                /* a要素をブロック化 */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-decoration: none;         /* 下線を消す */
+  color: inherit;                /* 文字色を継承 */
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.activities-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+/* キーボード操作時のフォーカス見やすく */
+.activities-content:focus-visible {
+  outline: 3px solid #111;       /* ブランド色に変えてOK */
+  outline-offset: 2px;
+}
+.activities-caption {
+  font-weight: 600;
+  padding: 12px;
+}
+
+/* MOREボタンの見た目は任意で */
+.link-more {
+  color: #222;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.link-more:hover { opacity: .7; }
+
+.section__more {
+  text-align: center;
+  margin-top: clamp(40px, 6vw, 40px); /* 画面幅に応じて可変 */
+  margin-right: 40px;
+}
+
+
+/* ===== ギャラリー（画像横並び） ===== */
+.activities-slider {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px auto 0;
+  padding: 0;
+}
+.activities-slider li {
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* ===== 入会セクション ===== */
+.join-section {
+  background: #fff;
+  padding: 100px 0;
+  text-align: center;
+  
+}
+.join-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+.join-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 40px 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  /* box-shadow: 0 6px 16px rgba(0,0,0) */
+}
+/* スマホ調整 */
+@media (max-width: 768px) {
+.join-text {
+    font-size: 13px;
+  }
+ .join-title{
+    font-size: 20px;
+  }
+}
+/* CTAボタン */
+.btn-cta {
+  display: inline-block;
+  background: #06C755;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 36px;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+.btn-cta:hover {
+  background: #05b84c;
+  transform: translateY(-2px);
+}
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+  .join-section {
+    padding: 60px 0;
+  }
+  .join-title {
+    font-size: 22px;
+  }
+  .join-card {
+    padding: 32px 16px;
+  }
+}
+
+/* SNS */
+.sns-section{
+   text-align:center;
+   margin:50px 0 56px; }
+.sns__title{
+   font-size:22px;
+  margin-bottom:16px; }
+.sns__list{
+  display:grid; grid-template-columns:repeat(3,120px);
+  gap:28px; justify-content:center; align-items:start; margin:16px auto 0; padding:0; list-style:none;
+}
+.sns__item a{
+  display:grid; gap:8px; justify-items:center; text-decoration:none; color:#222;
+}
+.sns__icon{ width:56px; height:56px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,.08); }
+.sns__label{ font-size:13px; opacity:.8; }
+.sns__item a:hover .sns__icon{ transform:translateY(-2px); transition:.2s; }
+
+@media (max-width:768px){
+  .sns__title{
+    font-size: 20px;
+  }
+  .sns__labe{
+    font-size: 10px;
+  }
+  .sns__list{ 
+    grid-template-columns:repeat(3,80px); gap:18px;
+   }
+  .sns__icon{ 
+    width:44px; height:44px;
+   }
+}
+
+
+
+
+/* ===== フッター（後で追加する想定） ===== */
+.site-footer{
+  background:#e7e7e7; 
+  padding:48px 0 24px; 
+  color:#222;
+}
+.footer-links{
+  display:grid; 
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1100px; 
+  margin:0 auto 24px; 
+  padding:0 20px;
+}
+.footer-links__col{ text-align:center; }
+.footer-links__head{ font-size:13px; font-weight:700; margin-bottom:10px; opacity:.8; }
+.footer-links__dots{ display:grid; gap:10px; justify-content:center; }
+.footer-copy{ text-align:center; font-size:12px; opacity:.7; }
+.footer-credit{ text-align:center; font-size:12px; opacity:.7; }
+@media (max-width:768px){
+  .footer-links{ grid-template-columns:1fr; gap:12px; }
+}
+
+/* ===== トップへ戻るボタン ===== */
+.pagetop {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #222;              /* 好きな色に変えてOK */
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  cursor: pointer;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s, transform .2s;
+}
+
+/* 矢印アイコン（上向き） */
+.pagetop::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: translate(-50%, -30%) rotate(-45deg);
+}
+
+
+
+/* 表示状態 */
+.pagetop.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ホバー時 */
+.pagetop:hover {
+  transform: translateY(-2px);
+}
+
+/* スマホで少し小さく */
+@media (max-width: 768px) {
+  .pagetop {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+  .site-header__inner {
+    padding: 12px 20px;
+  }
+  .hero {
+    height: 400px;
+  }
+  .about-section,
+  .activities-section {
+    padding: 60px 0;
+  }
+  .activities-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .activities-content {
+    width: 90%;
+  }
+  .section__more {
+    margin-right: 20px;
+  }
+}
