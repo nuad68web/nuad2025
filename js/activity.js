@@ -1,4 +1,17 @@
 // ================================
+// Mobile Nav: close on link tap
+// ================================
+(function() {
+  const toggle = document.getElementById('nav-toggle');
+  if (!toggle) return;
+
+  // Close menu when any nav link is tapped
+  document.querySelectorAll('.site-nav .nav__link, .site-nav .nav__sub-link').forEach(function(link) {
+    link.addEventListener('click', function() { toggle.checked = false; });
+  });
+})();
+
+// ================================
 // Custom Cursor
 // ================================
 (function() {
